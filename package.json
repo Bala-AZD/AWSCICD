@@ -8,10 +8,10 @@
     "build": "echo 'Building application...' && mkdir -p build && echo 'Build completed' > build/index.html"
   },
   "dependencies": {
-    "express": "^4.17.1"  // For example, if you're using Express for your Node.js app
+    "express": "^4.17.1" 
   },
   "devDependencies": {
-    // You can add dev dependencies if needed
+   
   },
   "author": "Bala",
   "license": "ISC"
