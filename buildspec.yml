@@ -14,8 +14,8 @@ phases:
   commands:
     - echo "Build completed"
     - echo "Packaging artifact"
-    - zip -r build-artifact.zip ./build
-    - aws s3 cp build-artifact.zip s3://generic-names/pipeline5/BuildArtifact/
+    - zip -r BuildArtifact.zip ./build
+    - aws s3 cp BuildArtifact.zip s3://generic-names/pipeline5/BuildArtifact/
 
 
 
