@@ -11,9 +11,11 @@ phases:
      - echo "Building application"
      - npm run build
  post_build:
-   commands:
-     - echo "Build completed"
-     - echo "Deploying application"
-     - aws s3 cp ./build s3://generic-names/pipeline5/BuildArtif --recursive
+  commands:
+    - echo "Build completed"
+    - echo "Packaging artifact"
+    - zip -r build-artifact.zip ./build
+    - aws s3 cp build-artifact.zip s3://generic-names/pipeline5/BuildArtifact/
+
 
 
