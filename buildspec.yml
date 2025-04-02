@@ -1,21 +1,23 @@
 version: 0.2
 phases:
- install:
-   runtime-versions:
-     nodejs: 16
-   commands:
-     - echo "Installing dependencies"
-     - npm install
- build:
-   commands:
-     - echo "Building application"
-     - npm run build
- post_build:
-  commands:
-    - echo "Build completed"
-    - echo "Packaging artifact"
-    - zip -r BuildArtifact.zip ./build
-    - aws s3 cp BuildArtifact.zip s3://generic-names/pipeline5/BuildArtif/BuildArtifact.zip
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - echo "Installing dependencies"
+      - npm install
+  build:
+    commands:
+      - echo "Building application"
+      - npm run build
+  post_build:
+    commands:
+      - echo "Build completed"
+      - echo "Packaging artifact"
+      - zip -r BuildArtifact.zip ./build
 
-
-
+artifacts:
+  files:
+    - BuildArtifact.zip
+  discard-paths: yes
+  name: BuildArtifact
