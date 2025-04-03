@@ -20,4 +20,4 @@ artifacts:
   files:
     - BuildArtifact.zip
   discard-paths: yes
-  name: BuildArtifact
+  name: generic-names/pipeline5/BuildArtifact
